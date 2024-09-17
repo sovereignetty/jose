@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cake Animation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container center">
+      <div class="candle"></div>
+      <div class="layer-1"></div>
+      <div class="layer-2"></div>
+      <div class="layer-3"></div>
+    </div>
+
+    <!-- Hidden birthday message -->
+    <div id="birthdayMessage" class="hidden">
+      <h1>Happy Birthday My Palangga! 🎉🎂</h1>
+    </div>
+
+    <!-- Wish message at the bottom, separate from the cake -->
+    <div id="wishMessage" class="hidden wish-container">
+      <p>After making a wish, <a href="wish.html" id="wishLink">click here</a>!</p>
+    </div>
+
+    <!-- Audio element -->
+    <audio id="birthdayAudio" src="song.mp3" preload="auto"></audio>
+
+    <!-- Button to start audio -->
+    <button id="startAudio">Play Birthday Song</button>
+
+    <script>
+      // Get audio element and button
+      var audio = document.getElementById('birthdayAudio');
+      var startButton = document.getElementById('startAudio');
+
+      // Play audio when button is clicked
+      startButton.addEventListener('click', function() {
+        audio.play();
+        startButton.style.display = 'none'; // Hide the button after playing audio
+      });
+
+      // Show the birthday message after the cake animation finishes
+      setTimeout(function() {
+        document.getElementById("birthdayMessage").classList.remove("hidden");
+        
+        // After showing the birthday message, show the wish message after 2 seconds
+        setTimeout(function() {
+          document.getElementById("wishMessage").classList.remove("hidden");
+        }, 2000); // Show wish message after 2 seconds
+      }, 8000); // 8 seconds matches the animation duration
+    </script>
+  </body>
+</html>

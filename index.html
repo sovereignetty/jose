@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
+  <title>Birthday Surprise - Cake and Balloons</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffe6f2;
+      color: #333;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      transition: background 1s ease;
+      overflow: hidden; /* Prevents scrolling */
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #ff3385;
+      text-align: center;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    p {
+      font-size: 1.3rem;
+      margin: 20px 0;
+      color: #4d4d4d;
+      line-height: 1.5;
+      text-align: center;
+      max-width: 80%;
+      margin: 0 auto;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    button {
+      padding: 12px 40px;
+      background-color: #ff66b2;
+      border: none;
+      border-radius: 50px;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    button:hover {
+      background-color: #ff3385;
+    }
+
+    input {
+      padding: 12px;
+      width: 250px;
+      margin-top: 20px;
+      border: 2px solid #ff66b2;
+      border-radius: 10px;
+      font-size: 1rem;
+      text-align: center;
+      color: #ff66b2;
+    }
+
+    input::placeholder {
+      color: #ff99cc;
+      font-style: italic;
+    }
+
+    /* Error Message */
+    #errorMessage {
+      color: red;
+      margin-top: 10px;
+      font-size: 1rem;
+      font-style: italic;
+    }
+
+    /* Celebration container */
+    .celebration-container {
+      display: none; /* Hide the cake and balloons initially */
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    /* Final interactions */
+    video {
+      width: 80%;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .loop-message {
+      color: #ff3385;
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Puzzle: When did we meet? -->
+  <div id="puzzleContainer">
+    <h1>When did we first meet? 💖</h1>
+    <input type="text" id="dateInput" placeholder="Enter the date ">
+    <button id="submitPuzzle">Submit</button>
+    <p id="errorMessage" class="hidden">Incorrect, try again!</p>
+  </div>
+
+  <!-- Continue Button -->
+  <div id="continueContainer" class="hidden">
+    <p>Hi my love! 💕<br>That's correct! That was the day that I met the most amazing person in the world. I am so happy to be your girlfriend. You make my world brighter, and I'm grateful for every moment we share. 💖</p>
+    <button id="continueButton">Continue for more surprise!</button>
+  </div>
+
+  <script>
+    // Puzzle Logic
+    const puzzleContainer = document.getElementById("puzzleContainer");
+    const dateInput = document.getElementById("dateInput");
+    const submitPuzzle = document.getElementById("submitPuzzle");
+    const errorMessage = document.getElementById("errorMessage");
+    const continueContainer = document.getElementById("continueContainer");
+    const continueButton = document.getElementById("continueButton");
+
+    submitPuzzle.addEventListener("click", function() {
+      const date = dateInput.value.trim();
+      if (date.toLowerCase() === "december 23, 2023") {
+        puzzleContainer.classList.add("hidden");
+        errorMessage.classList.add("hidden");
+        continueContainer.classList.remove("hidden");
+      } else {
+        errorMessage.classList.remove("hidden");
+      }
+    });
+
+    continueButton.addEventListener("click", function() {
+      window.location.href = "netty.html";
+    });
+  </script>
+
+</body>
+</html>

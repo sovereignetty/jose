@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Make a Wish</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+      }
+      video {
+        max-width: 100%;
+        height: auto;
+      }
+      .proceed-button {
+        font-weight: 800;
+  font-style: normal;
+  transition: all 0.1s linear;
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: solid 2px #0077b2;
+  border-radius: 4px;
+  color: #0077b2;
+  display: inline-block;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin: 5px;
+  padding: 10px;
+  line-height: 1em;
+  text-decoration:  none;
+  min-width: 120px;
+  outline: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <video controls>
+      <source src="wish.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <button class="proceed-button" onclick="window.location.href='last.html'">You're almost there. Click here!</button>
+  </body>
+</html>
